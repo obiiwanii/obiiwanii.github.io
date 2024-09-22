@@ -1,4 +1,4 @@
-export const verifyUser = `query($login: String) {
+/*export const verifyUser = `query($login: String) {
   users(where: { login: {_eq: $login}}) {
     login
   	progresses {
@@ -39,7 +39,7 @@ export const getAllAudits = `query ($login: String!, $offs: Int!)  {
       createdAt
     }
   }
-}`
+}`*/
 
 export const getUserData = `
   query {

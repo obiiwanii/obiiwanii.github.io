@@ -52,9 +52,9 @@ function processData(data) {
   drawXpGraph(xpTransactions);
   drawAuditGraph(user.audits);
 
-  const givenAudits = user.audits.filter(audit => audit.type === "up").length;
-  const receivedAudits = user.audits.filter(audit => audit.type === "down").length;
-  const auditRatio = (givenAudits / receivedAudits).toFixed(2);
+  //const givenAudits = user.audits.filter(audit => audit.type === "up").length;
+  //const receivedAudits = user.audits.filter(audit => audit.type === "down").length;
+  const auditRatio = user.auditRatio;
   userAuditLabel.innerText = "Audit rate: " + auditRatio;
 }
 
