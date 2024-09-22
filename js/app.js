@@ -55,7 +55,7 @@ function processData(data) {
   //const givenAudits = user.audits.filter(audit => audit.type === "up").length;
   //const receivedAudits = user.audits.filter(audit => audit.type === "down").length;
   const auditRatio = user.auditRatio;
-  userAuditLabel.innerText = "Audit rate: " + auditRatio;
+  userAuditLabel.innerText = "Audit ratio: " + auditRatio;
 }
 
 // Add logout button functionality
