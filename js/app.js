@@ -45,12 +45,12 @@ function processData(data) {
 
   const xpTransactions = user.transactions.filter(tx => tx.type === "xp");
   const totalXp = data.xp.aggregate.sum.amount;
-  /*if (totalXp > 1000000) {
+  if (totalXp > 1000000) {
     userXpLabel.innerText = "Gained xp: " + (Math.round(totalXp / 10000) / 100) + "MB";
   } else if (xp > 1000) {
-    userXpLabel.innerText = "Gained xp: " + (Math.round(xp / 10) / 100) + "kB";
-  }*/
-  userXpLabel.innerText = "Gained xp: " + totalXp;
+    userXpLabel.innerText = "Gained xp: " + (Math.round(totalXp / 10) / 100) + "kB";
+  }
+  //userXpLabel.innerText = "Gained xp: " + totalXp;
   userLevelLabel.innerText = "Current lvl: " + data.level[0].amount;
 
   // Prepare data for charts
