@@ -3,7 +3,7 @@ import { getUserData } from "./queries.js";
 import { queryAPI } from "./graphql.js";
 import { drawXpGraph, drawAuditGraph } from "./charts.js";
 import { login, logout } from "./auth.js";
-import { calcLevel } from "./calc.js";
+
 
 const userName = document.getElementById("user-name");
 const userXpLabel = document.getElementById("xp");
@@ -50,15 +50,12 @@ function processData(data) {
   } else if (totalXp > 1000) {
     userXpLabel.innerText = "Gained xp: " + (Math.round(totalXp / 10) / 100) + "kB";
   }
-  //userXpLabel.innerText = "Gained xp: " + totalXp;
   userLevelLabel.innerText = "Current lvl: " + data.level[0].amount;
 
   // Prepare data for charts
   drawXpGraph(xpTransactions);
   drawAuditGraph(user.audits);
 
-  //const givenAudits = user.audits.filter(audit => audit.type === "up").length;
-  //const receivedAudits = user.audits.filter(audit => audit.type === "down").length;
   const auditRatio = user.auditRatio.toFixed(2);
   userAuditLabel.innerText = "Audit ratio: " + auditRatio;
 }
