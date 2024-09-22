@@ -26,7 +26,7 @@ window.addEventListener('load', async () => {
 });
 
 function promptLogin() {
-  const username = prompt("Enter your username:");
+  const username = prompt("Enter your email/username:");
   const password = prompt("Enter your password:");
   if (username && password) {
     login(username, password).then(() => {
@@ -44,9 +44,14 @@ function processData(data) {
   userName.innerText = user.login;
 
   const xpTransactions = user.transactions.filter(tx => tx.type === "xp");
-  const totalXp = xpTransactions.reduce((acc, tx) => acc + tx.amount, 0);
-  userXpLabel.innerText = "Gained xp: " + Math.floor(totalXp / 1000);
-  userLevelLabel.innerText = "Current lvl: " + calcLevel(totalXp);
+  const totalXp = data.xp.aggregate.sum.amount;
+  if (totalXp > 1000000) {
+    userXpLabel.innerText = "Gained xp: " + (Math.round(totalXp / 10000) / 100) + "MB";
+  } else if (xp > 1000) {
+    userXpLabel.innerText = "Gained xp: " + (Math.round(xp / 10) / 100) + "kB";
+  }
+  //userXpLabel.innerText = "Gained xp: " + Math.floor(totalXp / 1000);
+  userLevelLabel.innerText = "Current lvl: " + data.level[0].amount;
 
   // Prepare data for charts
   drawXpGraph(xpTransactions);
@@ -54,7 +59,7 @@ function processData(data) {
 
   //const givenAudits = user.audits.filter(audit => audit.type === "up").length;
   //const receivedAudits = user.audits.filter(audit => audit.type === "down").length;
-  const auditRatio = user.auditRatio;
+  const auditRatio = user.auditRatio.toFixed(2);
   userAuditLabel.innerText = "Audit ratio: " + auditRatio;
 }
 

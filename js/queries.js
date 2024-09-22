@@ -51,7 +51,9 @@ export const getUserData = `
       email
       createdAt
       auditRatio
-      transactions(where: { type: { _eq: "xp" } }) {
+      transactions( where: { _and: [{ type: { _eq: "xp" } }, { path: { _niregex: "(piscine)" } }] }
+      order_by: { createdAt: asc }
+      ) {
         type
         amount
         createdAt
@@ -65,6 +67,20 @@ export const getUserData = `
         amount
         createdAt
       }
+    }
+    xp: transaction_aggregate(where: { type: { _eq: "xp" }, eventId: { _eq: 148 } }) {
+      aggregate {
+        sum {
+          amount
+        }
+      }
+    }
+    level: transaction(
+      limit: 1
+      order_by: { amount: desc }
+      where: { type: { _eq: "level" }, eventId: { _eq: 148 } }
+    ) {
+      amount
     }
   }
 `;
