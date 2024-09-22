@@ -47,7 +47,7 @@ function processData(data) {
   const totalXp = data.xp.aggregate.sum.amount;
   if (totalXp > 1000000) {
     userXpLabel.innerText = "Gained xp: " + (Math.round(totalXp / 10000) / 100) + "MB";
-  } else if (xp > 1000) {
+  } else if (totalXp > 1000) {
     userXpLabel.innerText = "Gained xp: " + (Math.round(totalXp / 10) / 100) + "kB";
   }
   //userXpLabel.innerText = "Gained xp: " + totalXp;
