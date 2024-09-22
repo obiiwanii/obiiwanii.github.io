@@ -1,6 +1,50 @@
 <!DOCTYPE html>
-
-<title>Test HTML</title>
-
-<h1> Testing website hosting </h1>
+<html lang=en>
+<meta charset=UTF-8>
+<meta content="IE=edge" http-equiv=X-UA-Compatible>
+<meta content="width=device-width,initial-scale=1.0" name=viewport>
+<link href=https://fonts.googleapis.com rel=preconnect>
+<link crossorigin href=https://fonts.gstatic.com rel=preconnect>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Press+Start+2P&display=swap" rel=stylesheet>
+<link href=styles.css rel=stylesheet>
+<title>Kood/graphql</title>
+</head>
+<body>
+<div id=header>
+    <div id=user-info>
+        <div id=user-name></div>
+        <div id=xp></div>
+        <div id=level></div>
+        <div id=tasks></div>
+        <button id=logout-btn>Logout</button>
+    </div>
+</div>
+<div id=login-modal style=display:none></div>
+<section id="sect2">
+    <div class="chart-container">
+      <label class="chart-label">XP by months:</label>
+      <div id="line-chart"></div>
+      <div class="chart-details" id="xp-details">
+        <span id="xp-month"></span>
+        <span id="xp-gained"></span>
+      </div>
+    </div>
+  </section>
+  
+  <section id="sect3">
+    <div class="chart-container">
+      <label class="chart-label">Audits by months:</label>
+      <div id="bar-chart"></div>
+      <div class="chart-details" id="audit-details">
+        <span id="audit-month"></span>
+        <span id="given-audits"></span>
+        <span id="received-audits"></span>
+      </div>
+    </div>
+  </section>
+<script src=js/app.js type=module></script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js></script>
+</body>
 </html>

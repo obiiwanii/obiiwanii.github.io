@@ -1,0 +1,138 @@
+/* styles.css */
+
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #EEEEEE;
+    background-color: #222831;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Section */
+  #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  #user-info {
+    background-color: #393E46;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #user-info div {
+    padding: 10px 0;
+  }
+  
+  #user-name {
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 2rem;
+  }
+  
+  #logout-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid #EEEEEE;
+    color: #EEEEEE;
+    cursor: pointer;
+  }
+  
+  #logout-btn:hover {
+    background-color: #FFD369;
+    color: #222831;
+  }
+  
+  /* Chart Sections */
+  section {
+    background-color: #393E46;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .chart-label {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  #line-chart,
+  #bar-chart {
+    width: 100%;
+    height: 250px;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 600px) {
+    #header {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    #user-info {
+      width: 50%;
+      text-align: left;
+    }
+  
+    #user-name {
+      font-size: 2.5rem;
+    }
+  
+    #logout-btn {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    #user-info {
+      width: 40%;
+    }
+  
+    #user-name {
+      font-size: 3rem;
+    }
+  
+    #logout-btn {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .chart-details {
+    background-color: #393E46;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .chart-details span {
+    margin: 5px;
+    padding: 5px;
+    background-color: #222831;
+    border-radius: 3px;
+  }
+
+
